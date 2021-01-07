@@ -12,7 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <picocli.version>4.6.0</picocli.version>
+        <picocli.version>4.6.1</picocli.version>
         <graalvm.version>20.3.0</graalvm.version>
         <main-class>org.mvnsearch.DemoCliApp</main-class>
     </properties>
