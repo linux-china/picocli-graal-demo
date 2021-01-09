@@ -10,13 +10,11 @@ on:
     branches: [ master ]
 
 jobs:
-  buildOnWindows:
-    runs-on: windows-latest
+  buildOnLinux:
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - uses: ilammy/msvc-dev-cmd@v1.5.0
-      - uses: microsoft/setup-msbuild@v1
       - uses: ayltai/setup-graalvm@v1
         with:
           java-version: 11
@@ -24,5 +22,5 @@ jobs:
           native-image: true
       - name: Build with Maven
         run: mvn -DskipTests -B clean package native-image:native-image --file pom.xml
-        shell: powershell
+
 
