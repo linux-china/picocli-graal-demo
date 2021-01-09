@@ -11,11 +11,7 @@ on:
 
 jobs:
   build:
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ ubuntu-latest, macos-latest, windows-latest ]
-    runs-on: ${{ matrix.os }}
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -27,13 +23,6 @@ jobs:
         with:
           graalvm-version: '20.3.0.java8'
       - name: Install native-image
-        run: |
-          gu install native-image
+        run: gu install native-image
       - name: Build with Maven
         run: mvn -DskipTests -B clean package native-image:native-image --file pom.xml
-      - name: Upload artifacts
-        run: mkdir staging && cp target/demo-cli staging
-      - uses: actions/upload-artifact@v2
-        with:
-          name: Package
-          path: staging
