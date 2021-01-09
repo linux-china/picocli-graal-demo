@@ -112,9 +112,9 @@
                         <argument>picocli.AutoComplete</argument>
                         <argument>--force</argument><!-- overwrite if exists -->
                         <argument>--completionScript</argument>
-                        <argument>${project.build.directory}/${build.finalName}_completion.sh</argument>
+                        <argument>${project.build.directory}/${project.build.finalName}_completion.sh</argument>
                         <argument>-n</argument>
-                        <argument>${build.finalName}</argument>
+                        <argument>${project.build.finalName}</argument>
                         <argument>${main-class}</argument>
                     </arguments>
                 </configuration>
@@ -125,7 +125,7 @@
                 <version>${graalvm.version}</version>
                 <configuration>
                     <mainClass>${main-class}</mainClass>
-                    <imageName>${build.finalName}</imageName>
+                    <imageName>${project.build.finalName}</imageName>
                     <detail>true</detail>
                     <skip>false</skip>
                     <buildArgs>
