@@ -28,4 +28,4 @@ jobs:
           echo
           gu install native-image
     - name: Build with Maven
-      run: mvn -DskipTests -B package --file pom.xml
+      run: mvn -DskipTests -B clean package native-image:native-image --file pom.xml
