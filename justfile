@@ -1,8 +1,8 @@
-export GRAAL_HOME := "~/.jenv/candidates/java/graalvm-20.3.0-java11"
+export GRAAL_HOME := "~/.jenv/candidates/java/graalvm-21.2-java11"
 
 # native build
 native_build:
-   mvn -DskipTests clean package native-image:native-image
+   mvn -DskipTests clean package native:build
    upx -7 -k target/demo-cli
 
 # shell completion
