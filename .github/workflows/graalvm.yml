@@ -67,12 +67,12 @@ jobs:
       - uses: ayltai/setup-graalvm@v1
         with:
           java-version: 11
-          graalvm-version: 21.0.0
+          graalvm-version: 21.2.0
           native-image: true
       - name: Build with Maven
         run: mvn -DskipTests -B clean package native-image:native-image --file pom.xml
       - name: Run UPX
-        uses: crazy-max/ghaction-upx@v1.3.3
+        uses: crazy-max/ghaction-upx@v1.4.0
         with:
           version: latest
           file: target/demo-cli
