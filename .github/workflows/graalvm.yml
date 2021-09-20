@@ -18,13 +18,13 @@ jobs:
       - uses: ayltai/setup-graalvm@v1
         with:
           java-version: 11
-          graalvm-version: 21.0.0
+          graalvm-version: 21.2.0
           native-image: true
       - name: Build with Maven
         run: mvn -DskipTests -B clean package native-image:native-image --file pom.xml
         shell: powershell
       - name: Run UPX
-        uses: crazy-max/ghaction-upx@v1.3.3
+        uses: crazy-max/ghaction-upx@v1.4.0
         with:
           version: latest
           file: target/demo-cli.exe
@@ -43,14 +43,15 @@ jobs:
       - uses: ayltai/setup-graalvm@v1
         with:
           java-version: 11
-          graalvm-version: 21.0.0
+          graalvm-version: 21.2.0
           native-image: true
       - name: Build with Maven
         run: mvn -DskipTests -B clean package native-image:native-image --file pom.xml
       - name: Run UPX
-        uses: svenstaro/upx-action@v2
+        uses: crazy-max/ghaction-upx@v1.4.0
         with:
-          file: target/demo-cli
+          version: latest
+          file: target/demo-cli.exe
           args: '-7'
       - name: Upload artifacts
         run: mkdir staging && cp target/demo-cli staging/demo-cli-mac-amd64
