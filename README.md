@@ -1,6 +1,8 @@
 Picocli GraalVM native-image demo
 =================================
 
+Picocli with Spring Boot and GraalVM native-image demo.
+
 # References
 
 * Picocli: https://picocli.info/
@@ -10,3 +12,4 @@ Picocli GraalVM native-image demo
 * CLI Guidelines Aim to Help You Write Better CLI Programs: https://www.infoq.com/news/2020/12/cli-guidelines-qa/
 * CLI for NubesGen with GraalVM native Github Actions: https://github.com/jdubois/nubesgen-cli
 * GitHub Action for GraalVM: https://github.com/marketplace/actions/github-action-for-graalvm#templates
+* GraalVM Native Image Support: https://docs.spring.io/spring-boot/docs/current/reference/html/native-image.html
