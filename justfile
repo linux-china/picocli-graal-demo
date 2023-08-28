@@ -15,7 +15,7 @@ run_with_agent:
 
 # run test
 test:
-   ./target/demo-cli Jackie
+   ./target/picocli-graal-demo Jackie
 
 # setup
 setup:
